@@ -25,13 +25,21 @@ void loop() {
   if (buttonState == HIGH) {
     for (int i = 10; i > 0; i--) {
       lcd.clear();
-      lcd.print("Cronômetro: ");
-      lcd.print(i);
+      escrever("Tempo Restante:        ");
+      if (i < 10) {
+        lcd.print("0");
+        lcd.print(i);
+      } else {
+        lcd.print(i);
+      }
       digitalWrite(2, HIGH);
       delay(500);
       digitalWrite(2, LOW);
       delay(500);
     }
+
+    lcd.clear();
+    escrever("Tirando foto...");
 
     for (int i = 0; i < 10; i++) {
       digitalWrite(2, HIGH);
@@ -44,6 +52,9 @@ void loop() {
     delay(1000);
     meuServo.write(180);
 
+    escrever("Obrigado =)");
+    delay(2000);
+
     padrao();
   }
 
@@ -53,7 +64,7 @@ void loop() {
 void padrao() {
   lcd.clear();
 
-  escrever("Aperte para tirar uma foto");
+  escrever("Aperte para     tirar uma foto!");
 
   lcd.setCursor(0, 0);
 }
