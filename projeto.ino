@@ -23,7 +23,7 @@ void loop() {
   int buttonState = digitalRead(7);
 
   if (buttonState == HIGH) {
-    for (int i = 3; i > 0; i--) {
+    for (int i = 10; i > 0; i--) {
       lcd.clear();
       lcd.print("Cronômetro: ");
       lcd.print(i);
