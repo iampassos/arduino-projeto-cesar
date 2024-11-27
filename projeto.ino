@@ -1,6 +1,13 @@
+// Biblioteca do Display de LED
 #include <LiquidCrystal_I2C.h>
+
+// Bibliotecas para uso do Motor
 #include <Servo.h>
 #include <Wire.h>
+
+#define portaServo 8
+#define portaBotao 7
+#define portaLED 2
 
 LiquidCrystal_I2C lcd(0x27, 16, 2);
 Servo meuServo;
@@ -9,42 +16,44 @@ void padrao();
 void escrever(const char *texto);
 
 void setup() {
-  meuServo.attach(8);
+  meuServo.attach(portaServo);
   lcd.init();
   lcd.backlight();
 
   padrao();
 
-  pinMode(7, INPUT);
-  pinMode(2, OUTPUT);
+  pinMode(portaBotao, INPUT);
+  pinMode(portaLED, OUTPUT);
 }
 
 void loop() {
-  int buttonState = digitalRead(7);
+  int buttonState = digitalRead(portaBotao);
 
   if (buttonState == HIGH) {
     for (int i = 10; i > 0; i--) {
       lcd.clear();
       escrever("Tempo Restante:        ");
+
       if (i < 10) {
         lcd.print("0");
-        lcd.print(i);
-      } else {
-        lcd.print(i);
       }
-      digitalWrite(2, HIGH);
+
+      lcd.print(i);
+
+      digitalWrite(portaLED, HIGH);
       delay(500);
-      digitalWrite(2, LOW);
+      digitalWrite(portaLED, LOW);
       delay(500);
     }
 
     lcd.clear();
     escrever("Tirando foto...");
 
+    // Faz aquele efeito de apagar e desligar várias vezes na hora da foto
     for (int i = 0; i < 10; i++) {
-      digitalWrite(2, HIGH);
+      digitalWrite(portaLED, HIGH);
       delay(50);
-      digitalWrite(2, LOW);
+      digitalWrite(portaLED, LOW);
       delay(50);
     }
 
@@ -61,6 +70,7 @@ void loop() {
   delay(100);
 }
 
+// Volta o display ao texto inicial
 void padrao() {
   lcd.clear();
 
@@ -69,6 +79,7 @@ void padrao() {
   lcd.setCursor(0, 0);
 }
 
+// Escreve no display já contando que ele só tem 16 caracteres por linha
 void escrever(const char *texto) {
   int length = strlen(texto);
 
