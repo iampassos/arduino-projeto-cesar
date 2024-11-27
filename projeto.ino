@@ -1,9 +1,9 @@
-// Biblioteca do Display de LED
+// Bibliotecas para uso do Display de LED
 #include <LiquidCrystal_I2C.h>
-
-// Bibliotecas para uso do Motor
-#include <Servo.h>
 #include <Wire.h>
+
+// Biblioteca do Motor
+#include <Servo.h>
 
 #define portaServo 8
 #define portaBotao 7
