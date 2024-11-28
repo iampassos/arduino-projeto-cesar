@@ -57,9 +57,9 @@ void loop() {
       delay(50);
     }
 
-    meuServo.write(0);
-    delay(1000);
-    meuServo.write(180);
+   meuServo.write(0);
+    delay(200);
+    meuServo.write(90);
 
     escrever("Obrigado =)");
     delay(2000);
