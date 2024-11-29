@@ -68,7 +68,7 @@ Conecte o botão ao Arduino seguindo estas instruções:
 
 Abaixo está a imagem do botão utilizado no projeto:
 
-![Conexão entre o Arduino e o Botão](./imagens/botao.jpg)
+![Conexão entre o Arduino e o Botão](./imagens/botao.png)
 
 ---
 
