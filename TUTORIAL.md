@@ -39,7 +39,7 @@ Conecte o LCD aos pinos do Arduino conforme o protocolo I2C:
 
 Abaixo está uma imagem que ilustra as conexões físicas entre o Arduino e o LCD:
 
-![Conexão entre o Arduino e o LCD](./imagens/lcd.png)
+![Conexão entre o Arduino e o LCD](./imagens/lcd.png){width=300px}
 
 ### Explicação do Código
 1. **Inicialização do LCD:**
