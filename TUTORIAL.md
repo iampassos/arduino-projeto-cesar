@@ -50,9 +50,13 @@ Abaixo está uma imagem que ilustra as conexões físicas entre o Arduino e o LC
    - Esta função limpa o LCD, posiciona o cursor e exibe a mensagem padrão.
 
 #### Trecho de Código
+**Codigo do LCD "Aperte para tirar uma foto!"**
 ![Código do LCD "Aperte para tirar uma foto!"](./imagens/textoInicial.png)
+**Código do LCD "Tempo Restante:**
 ![Código do LCD "Tempo Restante:"](./imagens/tempoRestante.png)
+**Código do LCD "Tirando foto...**
 ![Código do LCD "Tirando foto..."](./imagens/tirandoFoto.png)
+**Código do LCD "Obrigado =)"**
 ![Código do LCD "Obrigado =)"](./imagens/obrigado.png)
 
 ## Passo 2: Configurando o Botão
